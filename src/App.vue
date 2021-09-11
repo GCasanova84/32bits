@@ -1,28 +1,49 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="d-flex justify-content-center py-3">
+      <img alt="logo" src="./assets/logo.png">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-50 mx-auto">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{name: 'inicio'}">Inicio</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{name: 'busqueda'}">Búsquedas</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link disabled" tabindex="-1" aria-disabled="true" :to="{name: 'busqueda'}">Ventas</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link disabled" tabindex="-1" aria-disabled="true" :to="{name: 'busqueda'}">Total</router-link>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <transition name="vista">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+
+.vista-enter-active, .vista-leave-active {
+    transition: opacity .1s;
+}
+.vista-enter, .vista-leave-to{
+    opacity: 0;
 }
 </style>
