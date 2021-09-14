@@ -17,10 +17,10 @@
               <router-link class="nav-link" :to="{name: 'busqueda'}">Búsquedas</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link disabled" tabindex="-1" aria-disabled="true" :to="{name: 'busqueda'}">Ventas</router-link>
+              <router-link class="nav-link" :to="{name: 'venta'}">Ventas</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link disabled" tabindex="-1" aria-disabled="true" :to="{name: 'busqueda'}">Total</router-link>
+              <router-link class="nav-link" :to="{name: 'total'}">Total</router-link>
             </li>
           </div>
         </div>
